@@ -14,26 +14,26 @@ export class AppComponent implements AfterViewInit{
   resetClick$: Subject<number> = new Subject();
   isTicking = false;
 
-  timer$!: Observable<boolean>;
+  ticker$!: Observable<boolean>;
 
   ngAfterViewInit() {
-     this.startTimer();
+     this.createObservers();
   }
 
-  startTimer(): void {
-    this.generateTimer()
+  createObservers(): void {
+    this.startTicker()
     this.startCounter();
   }
 
-  generateTimer(): void {
-    this.timer$ = interval(this.INTERVAL).pipe(
+  startTicker(): void {
+    this.ticker$ = interval(this.INTERVAL).pipe(
       mapTo(true),
       filter(e => e === this.isTicking)
     );
   }
 
   startCounter(): void {
-    this.counter$ = merge(this.timer$, this.resetClick$).pipe(
+    this.counter$ = merge(this.ticker$, this.resetClick$).pipe(
       scan((acc, newVal) => acc = newVal === -1 ? 0 : acc + 1, 0)
     )
   }

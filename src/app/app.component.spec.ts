@@ -39,7 +39,7 @@ describe('AppComponent', () => {
     resetButton = fixture.debugElement.query(By.css('.reset'));
     spyOn(component, 'assignTickerStatus').and.callThrough();
     component.isTicking = false;
-    component.startTimer();
+    component.startTicker();
   });
 
   const clickStartButton = () => {

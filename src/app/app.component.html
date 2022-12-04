@@ -6,8 +6,8 @@
       </button>
     </div>
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-      <button #start class="start-button" [disabled]="isTicking" (click)="assignTickerStatus(true)"  mat-raised-button color="primary">Start receiving</button>
-      <button #pause class="pause-button" [disabled]="!isTicking"  mat-raised-button (click)="assignTickerStatus(false)"  color="accent">Stop receiving</button>
+      <button  class="start-button" [disabled]="isTicking" (click)="assignTickerStatus(true)"  mat-raised-button color="primary">Start receiving</button>
+      <button  class="pause-button" [disabled]="!isTicking"  mat-raised-button (click)="assignTickerStatus(false)"  color="accent">Stop receiving</button>
     </div>
   </div>
 </div>
