@@ -1,6 +1,6 @@
 <div class="body" fxLayout="row" fxLayoutAlign="center center">
   <div class="timer-holder" fxLayout="column" fxLayoutAlign="center center">
-    <div>
+    <div class="reset-holder">
       <button class="reset" mat-icon-button (click)="resetCounterToZero()" [matBadgeHidden]="(counter$ | async) === 0"  [matBadge]="counter$ | async"   >
         <mat-icon class="timer-icon" matBadgeColor="warn">mail_outline</mat-icon>
       </button>
